@@ -12,7 +12,6 @@ BASE_DIR.mkdir(exists_ok=True)
 
 @app.get("/files/{filename:path}")
 def get_file(filename: str):
-  #VULNERABILITY
   file_path = BASE_DIR / filename
 
   if not file_path.exists() or not file_path.is_file():
